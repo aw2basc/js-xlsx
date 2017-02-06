@@ -1737,13 +1737,6 @@ function shift_range_xls(cell, range) {
 
 var OFFCRYPTO = {};
 var make_offcrypto = function(O, _crypto) {
-	var crypto;
-	if(typeof _crypto !== 'undefined') crypto = _crypto;
-	else if(typeof require !== 'undefined') {
-		try { crypto = require('crypto'); }
-		catch(e) { crypto = null; }
-	}
-
 	O.rc4 = function(key, data) {
 		var S = new Array(256);
 		var c = 0, i = 0, j = 0, t = 0;
@@ -1761,14 +1754,8 @@ var make_offcrypto = function(O, _crypto) {
 		}
 		return out;
 	};
-
-	if(crypto) {
-		O.md5 = function(hex) { return crypto.createHash('md5').update(hex).digest('hex'); };
-	} else {
-		O.md5 = function(hex) { throw "unimplemented"; };
-	}
 };
-make_offcrypto(OFFCRYPTO, typeof crypto !== "undefined" ? crypto : undefined);
+make_offcrypto(OFFCRYPTO);
 
 
 /* [MS-XLSB] 2.5.143 */
