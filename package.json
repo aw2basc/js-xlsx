@@ -1,6 +1,6 @@
 {
 	"name": "xlsx-aw2basc",
-	"version": "0.8.4",
+	"version": "0.8.5",
 	"author": "sheetjs",
 	"description": "Excel (XLSB/XLSX/XLSM/XLS/XML) and ODS spreadsheet parser and writer",
 	"keywords": [ "excel", "xls", "xlsx", "xlsb", "xlsm", "ods", "office", "spreadsheet" ],
@@ -9,14 +9,7 @@
 	},
 	"main": "./xlsx",
 	"dependencies": {
-		"exit-on-epipe":"",
-		"ssf":"~0.8.1",
-		"codepage":"",
-		"cfb":">=0.10.0",
-		"jszip":"2.4.0",
-		"crc-32":"",
-		"adler-32":"",
-		"commander":""
+		"jszip":"2.4.0"
 	},
 	"devDependencies": {
 		"mocha":"",
